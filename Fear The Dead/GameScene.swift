@@ -96,8 +96,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
       let currentPosition = player!.position
       if shouldMove(currentPosition: currentPosition, touchPosition: touch) {
         
-        let angle = atan2(currentPosition.y - touch.y, currentPosition.x - touch.x) + CGFloat(M_PI)
-        let rotateAction = SKAction.rotate(toAngle: angle + CGFloat(M_PI*0.5), duration: 0)
+        let angle = atan2(currentPosition.y - touch.y, currentPosition.x - touch.x) + CGFloat(Double.pi)
+        let rotateAction = SKAction.rotate(toAngle: angle + CGFloat(Double.pi*0.5), duration: 0)
         
         player!.run(rotateAction)
         
@@ -126,8 +126,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     for zombie in zombies {
       let currentPosition = zombie.position
       
-      let angle = atan2(currentPosition.y - targetPosition.y, currentPosition.x - targetPosition.x) + CGFloat(M_PI)
-      let rotateAction = SKAction.rotate(toAngle: angle + CGFloat(M_PI*0.5), duration: 0.0)
+      let angle = atan2(currentPosition.y - targetPosition.y, currentPosition.x - targetPosition.x) + CGFloat(Double.pi)
+      let rotateAction = SKAction.rotate(toAngle: angle + CGFloat(Double.pi*0.5), duration: 0.0)
       zombie.run(rotateAction)
       
       let velocotyX = zombieSpeed * cos(angle)
